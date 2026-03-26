@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <header class="signup-header">
+          <h1>Sign Up</h1>
+        </header>
+        <main class="signup-body">
+          <form action="#">
+            <p>
+          <label for="name">  Full Name </label>
+          <input type ="text" placeholder="Type Name Here" id="name" required pattern="/^[A-Za-z]*\s{1}[A-Za-z]*$/" title="Please enter a valid name (only letters and spaces allowed)" />
+          <i class="fa-solid fa-xmark"></i>   <!-- this is the cross icon which will be shown when the name is wrong, you can replace it with your own fontawesome kit link.it is non working due to the non working fontawesome kit link is script tag in the end of the body. -->
+          <span id="nameError"></span>
+          </p>
+         
+          <p>
+          <label for="email">  Email </label>
+          <input type ="email" placeholder="xyz@email.com" id="email" required />
+          <!-- if you want to add icon for email then you have to paste i class link and span class for email here. similarly if you want this for password you can add it there as well by adding i class and span id in password <p>. -->
+          <i class="fa-solid fa-xmark"></i>
+          <span id="emailError"></span>
+          </p>
+         
+          <p>
+          <label for="password">  password </label>
+          <input type ="password" placeholder="at least 8 characters" id="password" required min="8" max="32"/>
+          <i class="fa-solid fa-xmark"></i>
+          <span id="passwordError"></span>
+        </p>
+         
+        <p>
+            <input type="submit" value="Create Account" id="submitBtn"/>
+        </p>
+         
+        </form>
+        </main>
+        <footer class="signup-footer">
+          <p>Already have an account? <a href="#">Login</a></p>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script src="https://kitfontawesome.com/595a890311.js"
+  crossorigin="anonymous"></script>  <!-- this is a non working link, but it is used to show the icons (like cross icon while writing wrong name and right icon while writing correct name) in the form, you can replace it with your own fontawesome kit link. -->
+</html>
